@@ -18,13 +18,13 @@ export function Adicionar_habito({ navigation, route }: any) {
     if(nome && hora && descricao){
       if(habitToEdit){ 
         await updateUser(habitToEdit.id!, nome, hora, descricao);
-        await agendarNotificacao(habitToEdit.id!, nome, hora);
+        await agendarNotificacao(habitToEdit.id!, nome, hora, descricao);
       } else { 
         await addUser(nome, hora, descricao);
         // buscar o último hábito criado para pegar o id
         const lista = await getUsers();
         const ultimo = lista[lista.length - 1];
-        await agendarNotificacao(ultimo.id!, nome, hora);
+        await agendarNotificacao(ultimo.id!, nome, hora, descricao);
       }
       navigation.goBack();
     }

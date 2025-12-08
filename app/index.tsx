@@ -40,7 +40,6 @@ export default function HomeScreen() {
       if (status !== 'granted') {
         alert('Permissão para notificações não concedida!');
       }
-
     })();
   }, []);
 
