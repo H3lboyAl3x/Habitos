@@ -10,18 +10,20 @@ export const initDB = async () => {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       nome TEXT NOT NULL,
       hora TEXT NOT NULL,
-      descricao TEXT
+      descricao TEXT,
+      notificationId TEXT
     );
   `);
 };
 
 // Adicionar hábito
-export const addUser = async (nome: string, hora: string, descricao: string) => {
+export const addUser = async ( nome: string, hora: string, descricao: string, notificationId: string ) => {
   await db.runAsync(
-    "INSERT INTO habitos (nome, hora, descricao) VALUES (?, ?, ?)",
+    "INSERT INTO habitos (nome, hora, descricao, notificationId) VALUES (?, ?, ?, ?)",
     nome,
     hora,
-    descricao
+    descricao,
+    notificationId
   );
 };
 
@@ -44,12 +46,13 @@ export const deleteUser = async (id: number) => {
 };
 
 // Ediat hábito
-export const updateUser = async (id: number, nome: string, hora: string, descricao: string) => {
+export const updateUser = async ( id: number, nome: string, hora: string, descricao: string, notificationId: string ) => {
   await db.runAsync(
-    "UPDATE habitos SET nome = ?, hora = ?, descricao = ? WHERE id = ?",
+    "UPDATE habitos SET nome = ?, hora = ?, descricao = ?, notificationId = ? WHERE id = ?",
     nome,
     hora,
     descricao,
+    notificationId,
     id
   );
 };

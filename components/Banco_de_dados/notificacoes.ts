@@ -8,8 +8,11 @@ export const agendarNotificacao = async (
 ) => {
   const [hh, mm] = hora.split(':').map(Number);
 
-  await Notifications.scheduleNotificationAsync({
-    content: { title: 'Hábito!', body: `Hora de: ${nome} \n${descricao}` },
+  const notificationId = await Notifications.scheduleNotificationAsync({
+    content: {
+      title: 'Hábito!',
+      body: `Hora de: ${nome} \n${descricao}`,
+    },
     trigger: {
       type: Notifications.SchedulableTriggerInputTypes.DAILY,
       hour: hh,
@@ -17,4 +20,9 @@ export const agendarNotificacao = async (
       channelId: 'default'
     },
   });
-}
+  return notificationId;
+};
+
+export const apagarNotificacao = async (notificationId: string) => {
+  await Notifications.cancelScheduledNotificationAsync(notificationId);
+};

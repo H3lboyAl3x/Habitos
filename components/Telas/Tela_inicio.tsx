@@ -3,6 +3,7 @@ import { getUsers, initDB, deleteUser } from "../Banco_de_dados/database";
 import { Habitos } from "../Banco_de_dados/types";
 import { useState, useCallback } from "react";
 import { useFocusEffect } from '@react-navigation/native';
+import { apagarNotificacao } from "../Banco_de_dados/notificacoes";
 
 
 export function Tela_inicio({navigation}: any){
@@ -14,15 +15,19 @@ export function Tela_inicio({navigation}: any){
       `Hábito: ${item.nome}`,
       [
         { text: "Editar", onPress: () => navigation.navigate('Adicionar_habito', { habito: item }) },
-        { text: "Apagar", onPress: () => apagarHabito(item.id!), style: "destructive" },
+        { text: "Apagar", onPress: () => apagarHabito(item), style: "destructive" },
         { text: "Cancelar", style: "cancel" }
       ]
     );
   };
-  const apagarHabito = async (id: number) => {
-    await deleteUser(id);
-    carregarHabitos(); // atualiza a lista
+  const apagarHabito = async (item: Habitos) => {
+    if (item.notificationId) {
+      await apagarNotificacao(item.notificationId);
+    }
+    await deleteUser(item.id!);
+    carregarHabitos();
   };
+
 
   const carregarHabitos = async () => {
     const lista = await getUsers();

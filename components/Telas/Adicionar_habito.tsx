@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, StyleSheet, TextInput } from "react-native";
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { addUser, updateUser, getUsers } from "../Banco_de_dados/database";
-import { agendarNotificacao } from "../Banco_de_dados/notificacoes";
+import { addUser, updateUser } from "../Banco_de_dados/database";
+import { apagarNotificacao, agendarNotificacao } from "../Banco_de_dados/notificacoes";
 import { useState } from "react";
 
 export function Adicionar_habito({ navigation, route }: any) {
@@ -15,16 +15,21 @@ export function Adicionar_habito({ navigation, route }: any) {
   const [time, setTime] = useState(habitToEdit ? new Date(`1970-01-01T${habitToEdit.hora}:00`) : new Date());
 
   const adicionarOuEditar = async () => {
-    if(nome && hora && descricao){
-      if(habitToEdit){ 
-        await updateUser(habitToEdit.id!, nome, hora, descricao);
-        await agendarNotificacao(habitToEdit.id!, nome, hora, descricao);
-      } else { 
-        await addUser(nome, hora, descricao);
-        // buscar o último hábito criado para pegar o id
-        const lista = await getUsers();
-        const ultimo = lista[lista.length - 1];
-        await agendarNotificacao(ultimo.id!, nome, hora, descricao);
+    if (nome && hora && descricao) {
+      if (habitToEdit) {
+        if (habitToEdit.notificationId) {
+          await apagarNotificacao(habitToEdit.notificationId);
+        }
+        const novoNotificationId = await agendarNotificacao(
+          habitToEdit.id!,
+          nome,
+          hora,
+          descricao
+        );
+        await updateUser( habitToEdit.id!, nome, hora, descricao, novoNotificationId );
+      } else {
+        const notificationId = await agendarNotificacao( Date.now(), nome, hora, descricao );
+        await addUser(nome, hora, descricao, notificationId);
       }
       navigation.goBack();
     }

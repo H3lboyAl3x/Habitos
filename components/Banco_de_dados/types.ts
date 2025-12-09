@@ -3,4 +3,5 @@ export type Habitos = {
   nome: string;
   hora: string;
   descricao: string;
+  notificationId: string;
 };
