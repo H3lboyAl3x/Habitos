@@ -68,3 +68,7 @@ Desenvolvido por Edgar Alexandre
 
 📍 Angola
 📱 Desenvolvedor Mobile
+
+
+Para pessoas que desejam testar o aplicativo, sem clonar o projeto.
+Poderá usar esse link para download do app: **https://expo.dev/artifacts/eas/8hAv82vn9DSVtcpXbmKznX.apk**
