@@ -1,50 +1,70 @@
-# Welcome to your Expo app 👋
+# 📱 Habito App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicativo mobile desenvolvido em **React Native com Expo**, focado na criação e gerenciamento de **hábitos diários**, com **notificações automáticas no horário definido pelo usuário** 
+Todos os dados são armazenados **localmente no dispositivo**, garantindo privacidade, desempenho e funcionamento offline
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Tecnologias Utilizadas
 
-   ```bash
-   npm install
-   ```
+- ⚛️ React Native
+- 🚀 Expo
+- 🟢 Node.js
+- 📦 npm
+- 💾 Armazenamento Local
+- 🔔 Notificações Locais
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 📦 Pré-requisitos
 
-In the output, you'll find options to open the app in a
+Antes de executar o projeto, é necessário ter instalado:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Node.js
+- npm (já incluido no Node)
+- Expo CLI ou Expo
+- Dispositivo Android ou Emulador Android
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🧠 Sobre o Aplicativo
 
-When you're ready, run:
+O Habito App permite que o usuário:
 
-```bash
-npm run reset-project
-```
+- ✅ Crie hábitos personalizados
+- ⏰ Defina horários específicos
+- 🔔 Receba notificações automáticas
+- 💾 Armazene tudo localmente no dispositivo
+- 📡 Utilize o aplicativo totalmente offline
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## ✨ Funcionalidades
 
-To learn more about developing your project with Expo, look at the following resources:
+- ➕ Criar hábitos
+- 📝 Editar hábitos
+- 🗑️ Excluir hábitos
+- 🔔 Notificações automáticas por horário
+- 💾 Persistência de dados local
+- 🎯 Interface simples e intuitiva
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 🎯 Objetivo do Projeto
 
-Join our community of developers creating universal apps.
+Este projeto foi desenvolvido com foco em:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- 📚 Aprimoramento em React Native
+- 🧠 Lógica de notificações locais
+- 💾 Gerenciamento de armazenamento local
+- 🎨 Design de interface mobile
+- 📱 Desenvolvimento de aplicativos reais
+
+---
+
+## 👨‍💻 Desenvolvedor
+
+Desenvolvido por Edgar Alexandre
+
+📍 Angola
+📱 Desenvolvedor Mobile
