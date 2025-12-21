@@ -1,4 +1,4 @@
-# 📱 Habito App
+# 📱 Hábito App
 
 Aplicativo mobile desenvolvido em **React Native com Expo**, focado na criação e gerenciamento de **hábitos diários**, com **notificações automáticas no horário definido pelo usuário** 
 Todos os dados são armazenados **localmente no dispositivo**, garantindo privacidade, desempenho e funcionamento offline
@@ -11,7 +11,7 @@ Todos os dados são armazenados **localmente no dispositivo**, garantindo privac
 - 🚀 Expo
 - 🟢 Node.js
 - 📦 npm
-- 💾 Armazenamento Local
+- 💾 SQLite(Armazenamento Local)
 - 🔔 Notificações Locais
 
 ---
